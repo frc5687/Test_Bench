@@ -1,7 +1,6 @@
 /* Team 5687 (C)2021 */
 package org.frc5687.swerve;
 
-import com.ctre.phoenix.motorcontrol.can.VictorSPX;
 import com.kauailabs.navx.frc.AHRS;
 import edu.wpi.first.wpilibj.SPI;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
@@ -27,6 +26,7 @@ public class RobotContainer extends OutliersContainer {
         _robot.addPeriodic(this::controllerPeriodic, 0.005, 0.005);
         _imu.reset();
         victor = new VictorMotors(this);
+        victor.setSpeed();
     }
 
     public void periodic() {}
